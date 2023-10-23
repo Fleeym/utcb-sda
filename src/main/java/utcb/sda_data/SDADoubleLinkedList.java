@@ -1,14 +1,8 @@
 package utcb.sda_data;
 
-class SDADoubleLinkedListNode<T> {
-    public T data;
-    public SDADoubleLinkedListNode<T> next;
-    public SDADoubleLinkedListNode<T> previous;
-}
-
 public class SDADoubleLinkedList<T> {
-    private SDADoubleLinkedListNode<T> head = null;
-    private SDADoubleLinkedListNode<T> tail = null;
+    public SDADoubleLinkedListNode<T> head = null;
+    public SDADoubleLinkedListNode<T> tail = null;
 
     private void initializeList(T data) {
         head = new SDADoubleLinkedListNode<>();
