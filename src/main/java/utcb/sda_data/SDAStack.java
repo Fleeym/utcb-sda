@@ -1,4 +1,4 @@
-package utcb.sda_stack;
+package utcb.sda_data;
 
 public class SDAStack {
 
