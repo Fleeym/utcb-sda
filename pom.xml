@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>utcb.sda</groupId>
-    <artifactId>lab_1_stiva</artifactId>
+    <artifactId>utcb-sda</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
