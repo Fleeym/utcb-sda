@@ -1,13 +1,13 @@
 package utcb.sda3;
 
-import utcb.sda_data.SDADoubleLinkedList;
-import utcb.sda_data.SDADoubleLinkedListNode;
+import utcb.sda_data.SDALinkedList;
+import utcb.sda_data.SDALinkedListNode;
 
 public class Main {
     public static void main(String[] args) {
         // Testam ca merge
         System.out.println("---- Test Initial ----");
-        SDADoubleLinkedList<Integer> list = new SDADoubleLinkedList<>();
+        SDALinkedList<Integer> list = new SDALinkedList<>();
         list.insertLast(3);
         list.insertLast(5);
         list.insertFirst(1);
@@ -24,7 +24,7 @@ public class Main {
 
         // Aplicatia 1 - Schimba fiecare aparitie a lui 'x' cu 'X'
         System.out.println("---- Aplicatia 1 ----");
-        SDADoubleLinkedList<Character> list2 = new SDADoubleLinkedList<>();
+        SDALinkedList<Character> list2 = new SDALinkedList<>();
         list2.insertLast('d');
         list2.insertLast('e');
         list2.insertLast('x');
@@ -47,9 +47,9 @@ public class Main {
         System.out.printf("Am gasit 'ab' de %d ori in lista%n", countAB(list2));
     }
 
-    public static int countAB(SDADoubleLinkedList<Character> list) {
+    public static int countAB(SDALinkedList<Character> list) {
         int count = 0;
-        SDADoubleLinkedListNode<Character> current = list.head;
+        SDALinkedListNode<Character> current = list.head;
         while (current != null) {
             if (current.next == null) {
                 break;
@@ -64,14 +64,13 @@ public class Main {
         return count;
     }
 
-    public static void replaceX(SDADoubleLinkedList<Character> list) {
-        SDADoubleLinkedListNode<Character> current = list.head;
+    public static void replaceX(SDALinkedList<Character> list) {
+        SDALinkedListNode<Character> current = list.head;
         while (current != null) {
             if (current.data == 'x') {
                 current.data = 'X';
             }
             current = current.next;
         }
-        return;
     }
 }

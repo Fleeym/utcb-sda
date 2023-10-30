@@ -1,11 +1,11 @@
 package utcb.sda_data;
 
-public class SDADoubleLinkedList<T> {
-    public SDADoubleLinkedListNode<T> head = null;
-    public SDADoubleLinkedListNode<T> tail = null;
+public class SDALinkedList<T> {
+    public SDALinkedListNode<T> head = null;
+    public SDALinkedListNode<T> tail = null;
 
     private void initializeList(T data) {
-        head = new SDADoubleLinkedListNode<>();
+        head = new SDALinkedListNode<>();
         head.data = data;
         tail = head;
     }
@@ -16,7 +16,7 @@ public class SDADoubleLinkedList<T> {
             return;
         }
 
-        SDADoubleLinkedListNode<T> newItem = new SDADoubleLinkedListNode<>();
+        SDALinkedListNode<T> newItem = new SDALinkedListNode<>();
         newItem.data = item;
         if (head == tail) {
             newItem.previous = head;
@@ -35,7 +35,7 @@ public class SDADoubleLinkedList<T> {
             initializeList(item);
             return;
         }
-        SDADoubleLinkedListNode<T> newItem = new SDADoubleLinkedListNode<>();
+        SDALinkedListNode<T> newItem = new SDALinkedListNode<>();
         newItem.data = item;
 
         head.previous = newItem;
@@ -80,7 +80,7 @@ public class SDADoubleLinkedList<T> {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
 
-        SDADoubleLinkedListNode<T> current = head;
+        SDALinkedListNode<T> current = head;
         while (current != null) {
             sb.append(current.data.toString());
             sb.append(", ");
