@@ -22,7 +22,7 @@ public class Main {
         }
         System.out.printf("Plecam de la h = %d\n", h);
         while (h > 0) {
-            for (int i = 0; i < arr.length; i++) {
+            for (int i = h; i < arr.length; i++) {
                 long temp = arr[i];
                 int j = i;
                 System.out.println(Arrays.toString(arr));
@@ -31,7 +31,9 @@ public class Main {
                     arr[j] = arr[j - h];
                     j -= h;
                 }
-                arr[j] = temp;
+                if (j != i) {
+                    arr[j] = temp;
+                }
             }
             h = (h - 1) / 3;
             System.out.printf("h = %d\n", h);
