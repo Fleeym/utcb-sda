@@ -10,6 +10,33 @@ public class Main {
         System.out.printf("Stare initiala: %s\n", Arrays.toString(arr));
         shellSort(arr);
         System.out.printf("Stare finala: %s\n", Arrays.toString(arr));
+        long[] arr2 = {36,56,31,21,101,56,41,2,10,25,15,19,17};
+        System.out.printf("Partitia are loc la pos %d\n", partition(arr2, 50));
+        System.out.println(Arrays.toString(arr));
+    }
+
+    public static int partition(long[] arr, long pivot) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (true) {
+            while(left < arr.length - 1 && arr[left] < pivot) {
+                left++;
+            }
+
+            while(right > 0 && arr[right] > pivot) {
+                right--;
+            }
+
+            if (left >= right) {
+                break;
+            } else {
+                long temp = arr[left];
+                arr[left] = arr[right];
+                arr[right] = temp;
+            }
+        }
+        return left;
     }
 
     public static void shellSort(long[] arr) {
